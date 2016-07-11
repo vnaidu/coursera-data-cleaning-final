@@ -3,7 +3,7 @@ library(dplyr)
 library(magrittr)
 
 # Initalize 'init_data_tools.R' to help mangage the requiste data
-source('./UCI_data_tools.R')
+source('./data_tools.R')
 
 # If data is not present in './Data', download and extract it
 fPaths <- checkDataOrDl()
