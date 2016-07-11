@@ -6,6 +6,7 @@ library(magrittr)
 source('./data_tools.R')
 
 # If data is not present in './Data', download and extract it
+# Assign dataset paths to fPaths
 fPaths <- checkDataOrDl()
 
 # Read train_* and test_* datasets and assign their respective column names
@@ -34,7 +35,6 @@ activity_levels <- c("walking", "walking_upstairs", "walking_downstairs",
 combined$activity %<>% factor(labels = activity_levels)
 
 # Select columns containing either mean or std readings
-
 vars2select <- grepl('(subjectID)|(activity)|(mean\\(\\))|std\\(\\)', colnames(combined))
 combined_mean_std <- combined[, vars2select]
 
